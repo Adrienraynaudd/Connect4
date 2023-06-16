@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Winner</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Winner: <span id="winner"></span></h1>
+  <button class="button" onclick="restartGame()">Play Again</button>
+
+  <script>
+    // Récupérer le paramètre de l'URL
+    const params = new URLSearchParams(window.location.search);
+    const winner = params.get("winner");
+
+    // Afficher le gagnant dans l'élément span
+    const winnerElement = document.getElementById("winner");
+    winnerElement.textContent = winner;
+
+    // Fonction pour relancer le jeu
+    function restartGame() {
+      window.location.href = "index.html"; // Remplacez "index.html" par le nom de votre fichier principal du jeu
+    }
+  </script>
+</body>
+</html>
